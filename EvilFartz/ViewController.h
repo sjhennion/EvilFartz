@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SoundManager.h"
+#import "ControlView.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <SoundManagerDelegate, ControlViewDelegate>
 
+@property ControlView *controlV;
 
 @end
 
