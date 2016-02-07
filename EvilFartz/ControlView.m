@@ -99,7 +99,7 @@
     
     UIView *buttonView = [[UIView alloc] initWithFrame:CGRectMake(origin.x, origin.y, self.frame.size.width, buttonH)];
     
-    // Stop play
+    // Play/pause
     UIColor *buttonColor = [UIColor colorWithRed:106.0/255.0 green:156.0/255.0 blue:173.0/255.0 alpha:1.0];
     float buttonW = (buttonView.frame.size.width - buf*3.0)/2.0;
     CGRect buttonF = CGRectMake(buf, 0.0, buttonW, buttonH);
@@ -112,7 +112,7 @@
     
     [buttonView addSubview:pauseButton];
     
-    // Pause/play buttton?
+    // Remove
     buttonF = CGRectMake(buf + buttonW + buf, 0.0, buttonW, buttonH);
     UIButton *removeButton = [[UIButton alloc] initWithFrame:buttonF];
     [removeButton addTarget:self action:@selector(removeButtonPressed:) forControlEvents:UIControlEventTouchDown];
@@ -126,7 +126,6 @@
     return buttonView;
 }
 
-#pragma mark -
 #pragma mark - External methods
 - (void)updateFileNames:(NSArray*)fileNamesIn {
     self.fileNameTableViewController.fileNames = fileNamesIn;
@@ -137,7 +136,6 @@
     [self.activeSoundsTableViewController reloadWithSounds:activeSounds];
 }
 
-#pragma mark -
 #pragma mark - Button methods
 - (void)playOnceButtonPressed:(id)sender {
     NSLog(@"Play file once button pressed");

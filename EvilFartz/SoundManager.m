@@ -41,7 +41,7 @@
     // Should never be called, but just here for clarity really.
 }
 
-#pragma mark - Return methods
+#pragma mark - Action methods
 // This takes an array of filetypes and builds the allPaths dictionary, so
 // that the path of any file can be found with [[_allPaths @"fileType"] @"fileName"]
 - (void)loadSoundFilesWithFiletypes:(NSArray*)fileTypes {
@@ -116,7 +116,6 @@
     [_playerPool removeObject:activePlayer];
 }
 
-#pragma mark -
 #pragma mark - Return methods
 - (NSArray*)getFileNamesForFileTypes:(NSArray*)fileTypes {
     NSMutableArray *fileNames = [NSMutableArray array];
@@ -159,8 +158,7 @@
     }
 }
 
-# pragma mark -
-# pragma mark AVAudioPlayerDelegate methods
+# pragma mark - AVAudioPlayerDelegate methods
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player
                        successfully:(BOOL)flag {
     //NSLog(@"Cleaning pool\n");
@@ -179,8 +177,7 @@
     }
 }
 
-# pragma mark - 
-# pragma mark Active Timer methods
+# pragma mark - Active Timer methods
 - (void)checkActive:(NSTimer*)timer {
     //NSLog(@"Checking active\n");
     [self.delegate updateActivePoolDependants:_playerPool];
